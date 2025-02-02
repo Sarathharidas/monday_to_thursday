@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <title>Monday to Thursday</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Flatpickr Date Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#fbf9f8] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      
+      <!-- Destination, Check-in, and Check-out fields in one row -->
+      <div class="flex max-w-[720px] flex-wrap gap-4 px-4 py-3">
+        
+        <!-- Destination Input -->
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#1b0f0e] text-base font-medium leading-normal pb-2">Destination</p>
+          <input
+            type="text"
+            placeholder="Where are you going?"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b0f0e] focus:outline-0 focus:ring-0 border border-[#e6d2d0] bg-[#fbf9f8] focus:border-[#e6d2d0] h-14 placeholder:text-[#96564f] p-[15px] text-base font-normal leading-normal"
+          />
+        </label>
+
+        <!-- Check-in -->
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#1b0f0e] text-base font-medium leading-normal pb-2">Check in</p>
+          <input
+            id="checkin"
+            type="text"
+            placeholder="Add dates"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b0f0e] focus:outline-0 focus:ring-0 border border-[#e6d2d0] bg-[#fbf9f8] focus:border-[#e6d2d0] h-14 placeholder:text-[#96564f] p-[15px] text-base font-normal leading-normal"
+          />
+        </label>
+
+        <!-- Check-out -->
+        <label class="flex flex-col min-w-40 flex-1">
+          <p class="text-[#1b0f0e] text-base font-medium leading-normal pb-2">Check out</p>
+          <input
+            id="checkout"
+            type="text"
+            placeholder="Add dates"
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#1b0f0e] focus:outline-0 focus:ring-0 border border-[#e6d2d0] bg-[#fbf9f8] focus:border-[#e6d2d0] h-14 placeholder:text-[#96564f] p-[15px] text-base font-normal leading-normal"
+          />
+        </label>
+
+      </div>
+
+      <h2 class="text-[#1b0f0e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Live anywhere, for now or forever</h2>
+
+      <!-- Listings -->
+      <div class="p-4 @container">
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-col items-stretch justify-start rounded-xl shadow-md bg-[#fbf9f8]">
+            <div class="w-1/4 bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/68c1e45a-dadd-4a8a-b2f1-c7353983cc78.png");'>
+            </div>
+            <div class="p-4">
+              <p class="text-[#1b0f0e] text-lg font-bold">Bali</p>
+              <p class="text-[#96564f] text-base">Villa · 2 bedrooms</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-stretch justify-start rounded-xl shadow-md bg-[#fbf9f8]">
+            <div class="w-1/4 bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/bd4065e5-e32d-497c-a7a9-d7f7580f3d56.png");'>
+            </div>
+            <div class="p-4">
+              <p class="text-[#1b0f0e] text-lg font-bold">Tulum</p>
+              <p class="text-[#96564f] text-base">Treehouse · 1 bedroom</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-stretch justify-start rounded-xl shadow-md bg-[#fbf9f8]">
+            <div class="w-1/4 bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/6835a5cd-7c53-4bdc-8f84-0b7cabc2144d.png");'>
+            </div>
+            <div class="p-4">
+              <p class="text-[#1b0f0e] text-lg font-bold">Paris</p>
+              <p class="text-[#96564f] text-base">Apartment · 1 bedroom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Initialize Flatpickr -->
+    <script>
+      flatpickr("#checkin", {
+        dateFormat: "Y-m-d",
+        minDate: "today"
+      });
+
+      flatpickr("#checkout", {
+        dateFormat: "Y-m-d",
+        minDate: "today"
+      });
+    </script>
+  </body>
+</html>
